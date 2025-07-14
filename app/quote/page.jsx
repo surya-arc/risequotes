@@ -6,7 +6,7 @@ const animeQuote = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isDark, setIsDark] = useState(true);
   
-  const URL = 'https://api.quotable.io/quotes/random';
+  const URL = 'https://zenquotes.io/api/random/[key]?option1=value&option2=value';
   
   const fetchQuotes = async() => {
     setIsLoading(true);
