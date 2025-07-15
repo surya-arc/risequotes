@@ -6,7 +6,7 @@ const animeQuote = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isDark, setIsDark] = useState(true);
   
-  const URL = 'https://zenquotes.io/api/random/[key]?option1=value&option2=value';
+  const URL = 'https://api.quotable.io/random';
   
   const fetchQuotes = async() => {
     setIsLoading(true);
@@ -15,8 +15,8 @@ const animeQuote = () => {
       const res = await fetch(URL);
       const data = await res.json();
       console.log(data);
-      if (data && data.length > 0) {
-        setQuote(data[0]);
+      if (data && data.content) {
+        setQuote(data);
         setIsLoading(false);
       }
     } catch (error) {
